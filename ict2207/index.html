@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICT 2207 — Object Oriented Pattern and Design | Md. Khalid Hasan</title>
+<meta name="description" content="ICT 2207 - Object Oriented Pattern and Design. Ten modules covering OOP and design patterns, by Md. Khalid Hasan, IT-24013.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=JetBrains+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon-deep:#3f0e18;
+    --maroon:#6b1626;
+    --maroon-mid:#8a2032;
+    --gold:#c9a24b;
+    --gold-dim:#8f7638;
+    --parchment:#f2e8d9;
+    --ink:#2a1d17;
+    --ink-dim:#6b584c;
+    --on-maroon:#f3e6da;
+    --on-maroon-dim:#d9b9bd;
+    --serif:'Playfair Display', Georgia, serif;
+    --sans:'Inter', system-ui, sans-serif;
+    --mono:'JetBrains Mono', ui-monospace, monospace;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--parchment);color:var(--ink);font-family:var(--sans);line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+
+  .topstrip{
+    background:var(--maroon-deep);color:var(--on-maroon-dim);
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;
+    padding:10px 24px;display:flex;justify-content:center;gap:8px;
+  }
+  .topstrip a{color:var(--gold);}
+  .topstrip a:hover{color:var(--on-maroon);}
+
+  header.hero{
+    background:linear-gradient(160deg, var(--maroon-deep), var(--maroon) 65%, var(--maroon-mid));
+    color:var(--on-maroon);padding:48px 0 42px;
+  }
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--gold);display:block;margin-bottom:10px;}
+  h1{font-family:var(--serif);font-weight:800;font-size:clamp(26px,4vw,38px);margin:0 0 12px;}
+  .lede{color:var(--on-maroon-dim);font-size:15px;max-width:620px;margin:0;}
+  .stats{
+    display:flex;gap:26px;flex-wrap:wrap;margin-top:22px;padding-top:18px;
+    border-top:1px solid rgba(243,230,218,0.18);font-family:var(--mono);font-size:12.5px;color:var(--on-maroon-dim);
+  }
+  .stats strong{color:var(--on-maroon);}
+
+  section{padding:44px 0 60px;}
+  .kicker{font-family:var(--mono);font-size:12px;color:var(--gold-dim);letter-spacing:.09em;display:block;margin-bottom:8px;}
+  h2{font-family:var(--serif);font-size:24px;margin:0 0 8px;}
+  .sec-sub{color:var(--ink-dim);font-size:14.5px;margin:0 0 26px;max-width:600px;}
+
+  .modules{display:flex;flex-direction:column;gap:12px;}
+  .module{
+    display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:18px;
+    background:#fffaf1;border:1px solid #e4d5bc;border-radius:12px;
+    padding:16px 20px;transition:border-color .15s ease, transform .15s ease;
+  }
+  a.module:hover{border-color:var(--gold);transform:translateX(3px);}
+  .module.locked{opacity:.66;}
+  .m-num{
+    font-family:var(--serif);font-weight:800;font-size:26px;color:var(--maroon);
+    text-align:center;
+  }
+  .module.locked .m-num{color:var(--ink-dim);}
+  .m-body h3{font-family:var(--sans);font-weight:700;font-size:15px;margin:0 0 3px;color:var(--ink);}
+  .m-body p{margin:0;font-size:13px;color:var(--ink-dim);}
+  .m-status{font-family:var(--mono);font-size:11px;white-space:nowrap;padding:4px 10px;border-radius:999px;}
+  .m-status.live{background:rgba(107,22,38,0.09);color:var(--maroon);border:1px solid rgba(107,22,38,0.25);}
+  .m-status.soon{background:rgba(107,88,76,0.1);color:var(--ink-dim);border:1px solid rgba(107,88,76,0.22);}
+
+  @media (max-width:560px){
+    .module{grid-template-columns:40px 1fr;grid-template-areas:"num body" "num status";}
+    .m-num{grid-area:num;font-size:20px;}
+    .m-body{grid-area:body;}
+    .m-status{grid-area:status;justify-self:start;}
+  }
+
+  footer{background:var(--maroon-deep);color:var(--on-maroon-dim);text-align:center;padding:30px 24px;font-size:12.5px;font-family:var(--mono);}
+  footer strong{color:var(--on-maroon);}
+  footer a{color:var(--gold);}
+</style>
+</head>
+<body>
+
+<div class="topstrip"><a href="../index.html">← Md. Khalid Hasan</a> <span>/ ICT 2207</span></div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">COURSE</span>
+    <h1>ICT 2207 — Object Oriented Pattern and Design</h1>
+    <p class="lede">Ten modules moving from Java concurrency through the object‑oriented design patterns that hold larger systems together.</p>
+    <div class="stats">
+      <span><strong>10</strong> modules</span>
+      <span><strong>1</strong> published</span>
+      <span>Developed by <strong>Md. Khalid Hasan</strong>, IT‑24013</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">CURRICULUM</span>
+    <h2>Modules</h2>
+    <p class="sec-sub">Module 1 is fully written up. The remaining nine will be added through the semester — check back for updates.</p>
+
+    <div class="modules">
+      <a class="module" href="module1/index.html">
+        <span class="m-num">01</span>
+        <div class="m-body">
+          <h3>Java Multi‑Threaded Programming</h3>
+          <p>Why multithreading, implementation, synchronization, the bank‑withdrawal race condition, and the thread life cycle.</p>
+        </div>
+        <span class="m-status live">available</span>
+      </a>
+
+      <div class="module locked">
+        <span class="m-num">02</span>
+        <div class="m-body"><h3>Module 2</h3><p>Content in progress.</p></div>
+        <span class="m-status soon">coming soon</span>
+      </div>
+      <div class="module locked">
+        <span class="m-num">03</span>
+        <div class="m-body"><h3>Module 3</h3><p>Content in progress.</p></div>
+        <span class="m-status soon">coming soon</span>
+      </div>
+      <div class="module locked">
+        <span class="m-num">04</span>
+        <div class="m-body"><h3>Module 4</h3><p>Content in progress.</p></div>
+        <span class="m-status soon">coming soon</span>
+      </div>
+      <div class="module locked">
+        <span class="m-num">05</span>
+        <div class="m-body"><h3>Module 5</h3><p>Content in progress.</p></div>
+        <span class="m-status soon">coming soon</span>
+      </div>
+      <div class="module locked">
+        <span class="m-num">06</span>
+        <div class="m-body"><h3>Module 6</h3><p>Content in progress.</p></div>
+        <span class="m-status soon">coming soon</span>
+      </div>
+      <div class="module locked">
+        <span class="m-num">07</span>
+        <div class="m-body"><h3>Module 7</h3><p>Content in progress.</p></div>
+        <span class="m-status soon">coming soon</span>
+      </div>
+      <div class="module locked">
+        <span class="m-num">08</span>
+        <div class="m-body"><h3>Module 8</h3><p>Content in progress.</p></div>
+        <span class="m-status soon">coming soon</span>
+      </div>
+      <div class="module locked">
+        <span class="m-num">09</span>
+        <div class="m-body"><h3>Module 9</h3><p>Content in progress.</p></div>
+        <span class="m-status soon">coming soon</span>
+      </div>
+      <div class="module locked">
+        <span class="m-num">10</span>
+        <div class="m-body"><h3>Module 10</h3><p>Content in progress.</p></div>
+        <span class="m-status soon">coming soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>ICT 2207</strong> — Object Oriented Pattern and Design · <a href="../index.html">Back to portfolio</a></p>
+</footer>
+
+</body>
+</html>
