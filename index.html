@@ -58,16 +58,33 @@
     pointer-events:none;
   }
   .hero-inner{display:flex;align-items:center;gap:36px;flex-wrap:wrap;position:relative;z-index:1;}
-  .seal{
-    flex:0 0 auto;width:112px;height:112px;border-radius:50%;
-    border:2px solid var(--gold);
-    display:flex;align-items:center;justify-content:center;
-    background:#fff9f0;
-    box-shadow:0 0 0 5px rgba(201,162,75,0.08);
+ .seal{
+    flex:0 0 auto;
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    border:3px solid var(--gold);
+    background:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     overflow:hidden;
-    padding:10px;
-  }
-  .seal img{width:100%;height:100%;object-fit:contain;}
+    box-shadow:0 0 15px rgba(0,0,0,.15);
+}
+
+.seal img{
+    width:88%;
+    height:88%;
+    object-fit:contain;
+    object-position:center;
+    display:block;
+}
+
+.hero-text{
+    min-width:260px;
+    flex:1 1 380px;
+}
+
   .hero-text{min-width:260px;flex:1 1 380px;}
   .eyebrow{
     font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--gold);
@@ -150,64 +167,6 @@
 
   .skip-link{position:absolute;left:-999px;background:var(--gold);color:var(--maroon-deep);padding:10px 16px;border-radius:6px;font-family:var(--mono);font-size:13px;z-index:100;}
   .skip-link:focus{left:16px;top:16px;}
-
-  /* ---------- MAIN NAV ---------- */
-  .mainnav{
-    background:var(--maroon-mid);
-    border-bottom:1px solid rgba(243,230,218,0.15);
-    position:sticky;top:0;z-index:80;
-  }
-  .mainnav .wrap{display:flex;align-items:center;}
-  .mainnav ul{list-style:none;margin:0;padding:0;display:flex;}
-  .mainnav > .wrap > ul{gap:2px;}
-  .mainnav li{position:relative;}
-  .mainnav > .wrap > ul > li > a,
-  .mainnav > .wrap > ul > li > span.top-label{
-    display:flex;align-items:center;gap:6px;
-    padding:14px 18px;color:var(--on-maroon);
-    font-family:var(--mono);font-size:13px;letter-spacing:.03em;
-    text-decoration:none;cursor:default;
-  }
-  .mainnav > .wrap > ul > li:hover > a,
-  .mainnav > .wrap > ul > li:hover > span.top-label{
-    background:rgba(243,230,218,0.08);color:var(--gold);
-  }
-  .caret{font-size:9px;opacity:.7;}
-
-  .dropdown{
-    position:absolute;top:100%;left:0;min-width:190px;
-    background:#fffaf1;border:1px solid #e4d5bc;border-radius:0 0 10px 10px;
-    box-shadow:0 16px 30px -14px rgba(63,14,24,0.4);
-    display:none;flex-direction:column;padding:6px;
-    z-index:90;
-  }
-  .mainnav li:hover > .dropdown{display:flex;}
-  .dropdown li{position:relative;}
-  .dropdown a, .dropdown span.leaf{
-    display:flex;align-items:center;justify-content:space-between;gap:10px;
-    padding:9px 12px;color:var(--ink);font-size:13px;font-family:var(--sans);
-    text-decoration:none;border-radius:6px;white-space:nowrap;cursor:default;
-  }
-  .dropdown a:hover, .dropdown li:hover > span.leaf{background:rgba(107,22,38,0.08);color:var(--maroon);}
-  .dropdown .arrow-r{font-size:10px;color:var(--ink-dim);}
-
-  .flyout{
-    position:absolute;top:-7px;left:100%;min-width:170px;
-    background:#fffaf1;border:1px solid #e4d5bc;border-radius:10px;
-    box-shadow:0 16px 30px -14px rgba(63,14,24,0.4);
-    display:none;flex-direction:column;padding:6px;
-    z-index:95;
-  }
-  .dropdown li:hover > .flyout{display:flex;}
-  .flyout a{display:block;padding:9px 12px;color:var(--ink);font-size:13px;text-decoration:none;border-radius:6px;}
-  .flyout a:hover{background:rgba(107,22,38,0.08);color:var(--maroon);}
-
-  @media (max-width:760px){
-    .mainnav .wrap{overflow-x:auto;}
-    .mainnav > .wrap > ul{gap:0;}
-    .dropdown, .flyout{position:static;box-shadow:none;border:none;display:none;min-width:0;}
-    .mainnav li:hover > .dropdown{display:flex;}
-  }
 </style>
 </head>
 <body>
@@ -215,71 +174,9 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="topstrip">STUDENT COURSE PORTFOLIO · DEPT. OF INFORMATION &amp; COMMUNICATION TECHNOLOGY</div>
 
-<nav class="mainnav">
-  <div class="wrap">
-    <ul>
-      <li>
-        <span class="top-label">Academic <span class="caret">▾</span></span>
-        <ul class="dropdown">
-          <li>
-            <span class="leaf">1st Year <span class="arrow-r">▶</span></span>
-            <ul class="flyout">
-              <li><a href="academic/year1-sem1.html">1st Semester</a></li>
-              <li><a href="academic/year1-sem2.html">2nd Semester</a></li>
-            </ul>
-          </li>
-          <li>
-            <span class="leaf">2nd Year <span class="arrow-r">▶</span></span>
-            <ul class="flyout">
-              <li><a href="academic/year2-sem1.html">1st Semester</a></li>
-              <li><a href="academic/year2-sem2.html">2nd Semester</a></li>
-            </ul>
-          </li>
-          <li>
-            <span class="leaf">3rd Year <span class="arrow-r">▶</span></span>
-            <ul class="flyout">
-              <li><a href="academic/year3-sem1.html">1st Semester</a></li>
-              <li><a href="academic/year3-sem2.html">2nd Semester</a></li>
-            </ul>
-          </li>
-          <li>
-            <span class="leaf">4th Year <span class="arrow-r">▶</span></span>
-            <ul class="flyout">
-              <li><a href="academic/year4-sem1.html">1st Semester</a></li>
-              <li><a href="academic/year4-sem2.html">2nd Semester</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <span class="top-label">Skills <span class="caret">▾</span></span>
-        <ul class="dropdown">
-          <li>
-            <span class="leaf">Programming <span class="arrow-r">▶</span></span>
-            <ul class="flyout">
-              <li><a href="#">C</a></li>
-              <li><a href="#">C++</a></li>
-              <li><a href="#">Java</a></li>
-              <li><a href="#">Python</a></li>
-              <li><a href="#">JavaScript</a></li>
-            </ul>
-          </li>
-          <li><a href="#">AI &amp; Machine Learning</a></li>
-          <li><a href="#">Robotics</a></li>
-          <li><a href="#">Embedded Systems</a></li>
-          <li><a href="#">Web Development</a></li>
-          <li><a href="#">Database</a></li>
-          <li><a href="#">Linux</a></li>
-          <li><a href="#">Tools</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
-
 <header class="hero">
   <div class="wrap hero-inner">
-    <div class="seal"><img src="assets/mbstu-logo.png" alt="Mawlana Bhashani Science and Technology University logo"></div>
+    <div class="seal"><img src="mbstu-logo.png" alt="Mawlana Bhashani Science and Technology University logo"></div>
     <div class="hero-text">
       <span class="eyebrow">B.SC. IN INFORMATION &amp; COMMUNICATION TECHNOLOGY</span>
       <h1>Md. Khalid Hasan</h1>
