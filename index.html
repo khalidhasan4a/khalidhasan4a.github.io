@@ -93,10 +93,24 @@
 }
 
   .hero-text{min-width:260px;flex:1 1 380px;}
+ 
   .eyebrow{
-    font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--gold);
-    display:block;margin-bottom:10px;
-  }
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.1em;
+    color:var(--gold);
+    display:inline-block;
+    margin-bottom:10px;
+    text-decoration:none;
+    transition:.25s;
+    cursor:pointer;
+}
+
+.eyebrow:hover{
+    color:#ffd56a;
+    text-decoration:underline;
+}
+  
   h1{
     font-family:var(--serif);font-weight:800;font-size:clamp(30px,4.5vw,46px);
     margin:0 0 8px;color:var(--on-maroon);letter-spacing:.01em;
@@ -196,7 +210,14 @@
     
     
     <div class="hero-text">
-      <span class="eyebrow">B.SC. IN INFORMATION &amp; COMMUNICATION TECHNOLOGY</span>
+      
+     <a class="eyebrow"
+   href="https://ict.mbstu.ac.bd/"
+   target="_blank"
+   rel="noopener noreferrer">
+    B.SC. IN INFORMATION &amp; COMMUNICATION TECHNOLOGY
+</a>
+      
       <h1>Md. Khalid Hasan</h1>
       <p class="role">Coursework notes, module breakdowns, and project write-ups kept in one place — one page per course, one section per module.</p>
       <div class="facts">
